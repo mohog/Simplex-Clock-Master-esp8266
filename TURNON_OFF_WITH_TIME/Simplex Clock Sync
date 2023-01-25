@@ -30,7 +30,6 @@ void setup() {
       Serial.print(".");        
   }
 
-  
   Serial.println();
 
   Serial.println("Wifi Connected Success!");
@@ -64,7 +63,6 @@ void loop() {
       digitalWrite(ledPin,LOW);
   }
   
-
     // 12 hour correction at 06:00 relay on
 
   if( (p_tm->tm_hour == 06) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
