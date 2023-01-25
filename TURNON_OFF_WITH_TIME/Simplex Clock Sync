@@ -53,25 +53,25 @@ void loop() {
    
   // Hourly correction all hours except 06:00 and 18:00 relay on
 
-  if( (p_tm->tm_hour != 06) && (p_tm->tm_hour != 18) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
+  if( (p_tm->tm_hour != 6) && (p_tm->tm_hour != 18) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
       digitalWrite(ledPin,HIGH);
   }
   
     // Hourly correction all hours except 06:00 and 18:00 relay off after 8 seconds
 
-  if( (p_tm->tm_hour != 06) && (p_tm->tm_hour != 18) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 02)){
+  if( (p_tm->tm_hour != 6) && (p_tm->tm_hour != 18) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 2)){
       digitalWrite(ledPin,LOW);
   }
   
     // 12 hour correction at 06:00 relay on
 
-  if( (p_tm->tm_hour == 06) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
+  if( (p_tm->tm_hour == 6) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
       digitalWrite(ledPin,HIGH);
   }
   
       // 12 hour correction at 06:00 relay off after 14 seconds
 
-  if( (p_tm->tm_hour == 06) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 08)){
+  if( (p_tm->tm_hour == 6) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 8)){
       digitalWrite(ledPin,LOW);
   }
   
@@ -83,7 +83,7 @@ void loop() {
   
       // 12 hour correction at 18:00 relay off after 14 seconds
 
-  if( (p_tm->tm_hour == 18) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 08)){
+  if( (p_tm->tm_hour == 18) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 8)){
       digitalWrite(ledPin,LOW);
   }
   
