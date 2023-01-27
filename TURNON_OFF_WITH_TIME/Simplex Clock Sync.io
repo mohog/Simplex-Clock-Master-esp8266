@@ -51,39 +51,38 @@ void loop() {
   time_t now = time(nullptr);
   struct tm* p_tm = localtime(&now);
    
-  // Hourly correction all hours except 06:00 and 18:00 relay on
+  // Hourly correction all hours except 05:00 and 17:00 relay turns on at 57 minutes and 54 seconds
 
-  if( (p_tm->tm_hour != 6) && (p_tm->tm_hour != 18) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
+  if( (p_tm->tm_hour != 5) && (p_tm->tm_hour != 17) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
       digitalWrite(ledPin,HIGH);
   }
   
-    // Hourly correction all hours except 06:00 and 18:00 relay off after 8 seconds
-
-  if( (p_tm->tm_hour != 6) && (p_tm->tm_hour != 18) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 2)){
+    // Hourly correction all hours except 05:00 and 17:00 relay turns off after 8 seconds
+  if( (p_tm->tm_hour != 5) && (p_tm->tm_hour != 17) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 2)){
       digitalWrite(ledPin,LOW);
   }
   
-    // 12 hour correction at 06:00 relay on
+    // 12 hour correction at 05:57 relay turns on at 57 minutes and 54 seconds
 
-  if( (p_tm->tm_hour == 6) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
+  if( (p_tm->tm_hour == 5) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
       digitalWrite(ledPin,HIGH);
   }
   
-      // 12 hour correction at 06:00 relay off after 14 seconds
+      // 12 hour correction at 05:57 relay off after 14 seconds
 
-  if( (p_tm->tm_hour == 6) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 8)){
+  if( (p_tm->tm_hour == 5) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 8)){
       digitalWrite(ledPin,LOW);
   }
   
-      // 12 hour correction at 18:00 relay on
+      // 12 hour correction at 17:57 relay turns on at 57 minutes and 54 seconds
 
-  if( (p_tm->tm_hour == 18) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
+  if( (p_tm->tm_hour == 17) && (p_tm->tm_min == 57) && (p_tm->tm_sec == 54)){
       digitalWrite(ledPin,HIGH);
   }
   
-      // 12 hour correction at 18:00 relay off after 14 seconds
+      // 12 hour correction at 17:57 relay off after 14 seconds
 
-  if( (p_tm->tm_hour == 18) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 8)){
+  if( (p_tm->tm_hour == 17) && (p_tm->tm_min == 58) && (p_tm->tm_sec == 8)){
       digitalWrite(ledPin,LOW);
   }
   
